@@ -1,8 +1,8 @@
-(defproject what-do-you-think "0.1.0-SNAPSHOT"
-  :description "FIXME: write description"
-  :url "http://example.com/FIXME"
-  :license {:name "Eclipse Public License"
-            :url  "http://www.eclipse.org/legal/epl-v10.html"}
+(defproject what-do-you-think "0.1.0"
+  :description "Go CD Pipeline monitor"
+  :url "https://github.com/meandor/what-do-you-think"
+  :license {:name "MIT License"
+            :url  "https://opensource.org/licenses/MIT"}
   :dependencies [[org.clojure/clojure "1.9.0"]
                  [de.otto/tesla-microservice "0.12.0"]
                  [de.otto/tesla-httpkit "1.0.1"]
