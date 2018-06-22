@@ -3,4 +3,5 @@
  :scheduler         {:cpu-count 2}
 
  :pipeline-base-api "http://bar"
- :pipeline-name     "foo"}
+ :pipeline-name     "foo"
+ :error-sound       "foo.mp3"}

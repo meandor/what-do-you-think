@@ -5,6 +5,7 @@ This Project was build with [Leiningen](https://leiningen.org/). Please install 
 [tesla-microservice](https://github.com/otto-de/tesla-microservice).
 
 The server will automatically run on port 8080. All configurations can be found in `resources/default.edn`.
+You can add a sound to play when the build is broken, ```:error-sound``` in the config file.
 
 ## Tests
 To run the tests:

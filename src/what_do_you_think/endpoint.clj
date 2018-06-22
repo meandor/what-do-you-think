@@ -17,11 +17,13 @@
      [:title "Dragon Killers"]
      (page/include-css "style.css")
      [:meta {:http-equiv "refresh" :content "3; URL=http://localhost:8080/"}]]
-
     [:body
      (if (pipeline-ok? (get-in config [:config :pipeline-base-api]) (get-in config [:config :pipeline-name]))
        [:div {:class "ok"} ":D"]
-       [:div {:class "error"} ":'("])]))
+       [:div {:class "error"}
+        [:audio {:autoplay "autoplay" :control "control" :loop "loop"}
+         [:source {:src (:error-sound config) :type "audio/mpeg"}]]
+        ":'("])]))
 
 (defn endpoint-filter [handler]
   (cc/routes
@@ -32,12 +34,14 @@
   (->> (partial response self)
        (endpoint-filter)))
 
-(defrecord Endpoint [handler]
+(defrecord Endpoint [config handler]
   c/Lifecycle
   (start [self]
     (log/info "-> starting Endpoint")
-    (handler/register-handler handler (create-routes self))
-    self)
+    (let [config-values (:config config)
+          new-self (assoc self :config config-values)]
+      (handler/register-handler handler (create-routes new-self))
+      new-self))
   (stop [_]
     (log/info "<- stopping Endpoint")))
 
