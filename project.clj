@@ -1,4 +1,4 @@
-(defproject what-do-you-think "0.1.0"
+(defproject what-do-you-think "0.1.1-SNAPSHOT"
   :description "Go CD Pipeline monitor"
   :url "https://github.com/meandor/what-do-you-think"
   :license {:name "MIT License"
