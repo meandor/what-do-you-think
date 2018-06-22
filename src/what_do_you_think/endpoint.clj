@@ -18,7 +18,7 @@
      (page/include-css "style.css")
      [:meta {:http-equiv "refresh" :content "3; URL=http://localhost:8080/"}]]
     [:body
-     (if (pipeline-ok? (get-in config [:config :pipeline-base-api]) (get-in config [:config :pipeline-name]))
+     (if (pipeline-ok? (:pipeline-base-api config) (:pipeline-name config))
        [:div {:class "ok"} ":D"]
        [:div {:class "error"}
         [:audio {:autoplay "autoplay" :control "control" :loop "loop"}
